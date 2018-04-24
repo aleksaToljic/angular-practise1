@@ -1,26 +1,30 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-           <a href="#" class="navbar-brand">Recipe Book</a>
+           <a routerLink="/" style="cursor: pointer" class="navbar-brand">Recipe Book</a>
 
 
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" (click)="onSelect('recipe')">Recipes</a>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav mr-auto">
+                <li routerLinkActive="active" class="nav-item">
+                    <a class="nav-link" routerLink="/recipes" >Recipes</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+                <li routerLinkActive="active" class="nav-item">
+                    <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav">
-                <li class="drowdown show" appDropdown>
-                    <a href="#" class="btn dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+
+        <ul class="nav navbar-nav">
+                <li routerLinkActive="active" class="nav-item">
+                    <a class="nav-link" routerLink="/signup" style="cursor: pointer">Sign Up</a>
+                </li>
+                <li class="drowdown show position-relative" appDropdown>
+                    <a style="cursor: pointer;"  class="nav-link dropdown-toggle" role="button">Manage <span class="caret"></span></a>
                     <ul class="dropdown-menu" >
                         <li>
-                            <a class="dropdown-item" href="#">Save Data </a>
+                            <a class="dropdown-item" (click)="onSave()" style="cursor: pointer">Save Data </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Fetch Data</a>
+                            <a class="dropdown-item" (click)="onFetchData()" style="cursor: pointer">Fetch Data</a>
                         </li>
                     </ul>
                 </li>
